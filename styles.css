@@ -1,0 +1,245 @@
+/* GLOBALES ************/
+
+:root{
+--Cyan: hsl(179, 62%, 43%);
+--Bright_Yellow: hsl(71, 73%, 54%);
+--Light_Gray: hsl(204, 43%, 93%);
+--Grayish_Blue: hsl(218, 22%, 67%);
+--White: hsl(0, 0%, 100%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: var(--Light_Gray);
+    font-family: 'Karla', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
+/* MAIN ************** */
+
+.main__container{
+    width: 85%;
+    margin: 5rem auto;
+    border-radius: 0.5rem;
+}
+
+.main__card{
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* CARD 1 **************** */
+
+.main__card--1{
+    background-color: var(--White);
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+
+.main__card--1 h1{
+    color: var(--Cyan);
+    font-weight: 700;
+    font-size: 1.3em;
+}
+
+.main__card--1 h2{
+    color: var(--Bright_Yellow);
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.main__card--1 p{
+    color: var(--Grayish_Blue);
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* CARD 2 **************** */
+
+.main__card--2{
+    background-color: var(--Cyan);
+    color: var(--White);
+    gap: 0;
+}
+
+.main__card--2 h1{
+    font-weight: 700;
+    font-size: 1em;
+    margin-bottom: 2.5rem;
+}
+
+.main__card--2__price{
+    height: 3rem;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    gap: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.main__card--2__price p:nth-child(1){
+    font-size: 1.9em;
+    font-weight: 700;
+    color: var(--Light_Gray);
+}
+
+.main__card--2__price p:nth-child(2){
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--Light_Gray);
+}
+
+.main__card--2 p{
+    color: var(--Light_Gray);
+    display: block;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.main__card--2 button{
+    color: var(--Light_Gray);
+    background-color: var(--Bright_Yellow);
+    display: block;
+    border: 0;
+    padding: 1.5rem 1rem;
+    border-radius: 0.3em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* CARD 3 ************** */
+
+.main__card--3{
+    --Cyan: hsl(179, 62%, 43%,0.7);
+    background-color: var(--Cyan);
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    color: var(--Light_Gray);
+}
+
+.main__card--3 h1{
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.main__card--3 p{
+    --Light_Gray: hsla(203, 44%, 93%, 0.65);
+    color: var(--Light_Gray);
+    font-weight: 400;
+    line-height: 0;
+}
+
+/* FOOTER  *************/
+
+.attribution{
+    color: var(--primary__color);
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+/* MEDIA QUERYS */
+
+@media screen and (min-width:800px){
+    .main__container{
+        width: 45%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0.8fr 1fr;
+        grid-template-areas:
+        "main__card--1 main__card--1"
+        "main__card--2 main__card--3";
+    }
+
+    .main__card{
+        padding: 3.5rem;
+    }
+
+    .main__card--1{
+        grid-area: main__card--1;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+
+    .main__card--1 h1{
+        font-size: 1.5em;
+    }
+
+    .main__card--1 h2{
+        font-size: 1.2em;
+    }
+
+    .main__card--1 p{
+        font-size: 1.1em;
+        line-height: 1.7;
+    }
+
+    /* CARD 2 */
+    
+    .main__card--2{
+        grid-area: main__card--2;
+    }
+
+    .main__card--2 h1{
+        margin-bottom: 4rem;
+    }
+
+    .main__card--2{
+        border-bottom-left-radius: 1rem;
+    }
+
+    /* CARD 3 */
+    
+    .main__card--3{
+        grid-area: main__card--3;
+        gap: 2rem;
+    }
+
+    .main__card--3{
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 1rem;
+    }
+
+    .main__card--3 p{
+        font-weight: 400;
+        font-size: 0.9em;
+    }
+
+    .main__card--3 p{
+        line-height: 0;
+    }
+
+    /* FOOTER */
+
+    .attribution{
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+}
+
+@media screen and (min-width:800px) and (max-width:1024px) {
+    .main__container{
+        width: 70%;
+    }
+}
